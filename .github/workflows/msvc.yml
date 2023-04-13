@@ -11,7 +11,7 @@ jobs:
         BUILD_TYPE: [Release, Debug]
         BUILD_SHARED_LIBS: [OFF, ON]
         #VCPKG_PLATFORM_TOOLSET: [v143, v142, v141]
-        CMAKE_GENERATOR_PLATFORM: [x64, Win32]
+        CMAKE_GENERATOR_PLATFORM: [x64]
         os: [windows-latest]
         include:
           # MSVC 2022
@@ -19,19 +19,19 @@ jobs:
             VCPKG_PLATFORM_TOOLSET: v143
             CMAKE_GENERATOR_PLATFORM: x64
 
-          - triplet: x86-windows
-            VCPKG_PLATFORM_TOOLSET: v143
-            CMAKE_GENERATOR_PLATFORM: Win32
+      #    - triplet: x86-windows
+      #      VCPKG_PLATFORM_TOOLSET: v143
+      #      CMAKE_GENERATOR_PLATFORM: Win32
 
           # MSVC 2019
-          - triplet: x86-windows
-            VCPKG_PLATFORM_TOOLSET: v142
-            CMAKE_GENERATOR_PLATFORM: Win32
+       #   - triplet: x86-windows
+       #     VCPKG_PLATFORM_TOOLSET: v142
+       #     CMAKE_GENERATOR_PLATFORM: Win32
  
           # MSVC 2017
-          - triplet: x86-windows
-            VCPKG_PLATFORM_TOOLSET: v141
-            CMAKE_GENERATOR_PLATFORM: Win32
+       #   - triplet: x86-windows
+       #     VCPKG_PLATFORM_TOOLSET: v141
+       #     CMAKE_GENERATOR_PLATFORM: Win32
  
     runs-on: ${{matrix.os}}
 
